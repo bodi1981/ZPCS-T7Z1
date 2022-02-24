@@ -25,7 +25,7 @@ namespace Diary.ViewModels
             RefreshStudentCommand = new RelayCommand(RefreshStudent);
             DBConfigCommand = new RelayCommand(SetDBConfig);
 
-            CheckDBConnection(null);
+            CheckDBConnection();
         }
 
         private Repsoitory _repository = new Repsoitory();
@@ -111,7 +111,7 @@ namespace Diary.ViewModels
             addEditStudentView.ShowDialog();
         }
 
-        private async void CheckDBConnection(object obj)
+        private async void CheckDBConnection()
         {
             using (DiaryDbContext dbContext = new DiaryDbContext())
             {
